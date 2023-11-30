@@ -26,6 +26,9 @@ int phi(int n)
 
 int main()
 {
+    int x;
+    cout << "enter your number: " << endl;
+    cin >> x;
     cout << phi(5) << endl;
     cout << factorial(6);
     return 0;
