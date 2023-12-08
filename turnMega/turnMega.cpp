@@ -7,21 +7,33 @@ int main()
     int n;
     cin >> k >> n;
 
-    int a;
-    int sum = 0;
+    vector<int> a(n);
     int pr = 0;
-
-    string astr;
-    astr.resize(n);
-    getline(cin, astr);
-    a = stoi(astr);
 
     for (int i = 0; i < n; i++)
     {
-        int digit = a % 10;
-        pr += digit - k;
-        a /= 10;
+        cin >> a[i];
+
+        if (a[i] >= k)
+        {
+            pr += a[i] - k;
+        }
+        else
+        {
+            if (pr != 0)
+            {
+                if (k - a[i] > pr)
+                {
+                    pr = 0;
+                }
+                else
+                {
+                    pr -= k - a[i];
+                }
+            }
+        }
     }
+
     cout << pr;
     return 0;
 }
