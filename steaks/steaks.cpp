@@ -9,7 +9,19 @@ int main()
     int halfs = n * 2;
 
     int result;
-    result = halfs / k + halfs % k;
+    if (n <= k)
+    {
+        result = 2;
+    }
+    else if (halfs % k == 0)
+    {
+        result = halfs / k;
+    }
+    else
+    {
+        result = halfs / k + 1;
+    }
+
     cout << result;
     return 0;
 }
